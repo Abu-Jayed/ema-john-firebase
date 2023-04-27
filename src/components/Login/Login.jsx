@@ -12,6 +12,8 @@ const Login = () => {
   const navigate = useNavigate()
   const location = useLocation()
 
+  const from = location.state?.from?.pathname || '/'
+
   const handleLogin = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -24,7 +26,7 @@ const Login = () => {
         console.log(result.user);
         setError("");
         setSuccess("user login successfully");
-        navigate('/')
+        navigate(from, {replace: true})
       })
       .catch((error) => {
         console.log(error);

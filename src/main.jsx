@@ -30,7 +30,7 @@ const router = createBrowserRouter([
       },
       {
         path: "inventory",
-        element: <Inventory></Inventory>,
+        element: <PrivetRoutes><Inventory></Inventory></PrivetRoutes> ,
       },
       {
         path: "checkout",
